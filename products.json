@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Remera",
+    "description": "Esta es una remera",
+    "price": 1500,
+    "thumbnail": "imagen de la remera",
+    "code": 249,
+    "stock": 100,
+    "id": 1
+  },
+  {
+    "title": "Camisa",
+    "description": "Esta es un buzo",
+    "price": 2500,
+    "thumbnail": "imagen del buzo",
+    "code": 1459,
+    "stock": 300,
+    "id": 2
+  },
+  {
+    "title": "Buzo",
+    "description": "Esta es un buzo",
+    "price": 2500,
+    "thumbnail": "imagen del buzo",
+    "code": 19,
+    "stock": 300,
+    "id": 3
+  },
+  {
+    "title": "Pantalon",
+    "description": "Esta es un pantalon",
+    "price": 200,
+    "thumbnail": "imagen del pantalon",
+    "code": 125,
+    "stock": 100,
+    "id": 4
+  },
+  {
+    "title": "Zapatillas",
+    "description": "Par de zapatillas",
+    "price": 12000,
+    "thumbnail": "imagen zapatillas",
+    "code": 4567,
+    "stock": 200,
+    "id": 5
+  }
+]
