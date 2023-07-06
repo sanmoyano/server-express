@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-const products = require('./products.json')
+const ProductManager = require('./productManager')
+const producManager = new ProductManager('products.json')
 
 app.use(express.urlencoded({extended: true}))
 
@@ -8,11 +9,15 @@ app.get('/', (req, res) => {
   res.send('HOLA PRODUCTOS')
 })
 
-app.get('/productos', (req,res) => {
+app.get('/productos', async (req,res) => {
   const { limit } = req.query
   console.log(`Buscando productos con ${limit}`)
+  const products = await producManager.getProducts()
+  
+  let filteredProducts = products
+
   if(limit){
-    const filteredProducts = products
+    filteredProducts = filteredProducts
       .filter(p => p.title.includes(limit) || p.description.includes(limit))
     res.send(filteredProducts)
   } else {
@@ -20,17 +25,17 @@ app.get('/productos', (req,res) => {
   }
 })
 
-app.get('/productos/:id', (req, res) => {
-  const {id} = req.params
+app.get('/productos/:id', async (req, res) => {
+  const { id } = req.params
+  const productId = parseInt(id)
+  const product = await producManager.getProductById(productId)
 
-  for(const p of products) {
-    if (p.id == id) {
-      res.send(p)
-      return
-    }
+
+  if (product) {
+    res.send(product);
+  } else {
+    res.send('El producto no existe');
   }
-
-  res.send('No existe')
 })
 
 const port = 3000

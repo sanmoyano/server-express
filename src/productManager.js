@@ -2,15 +2,17 @@ const fs = require('fs/promises')
 const path = require('path')
 
 class ProductManager {
-  constructor() {
+  constructor(filename) {
+    this.filename = filename
     this.filepath = path.join(__dirname, 'products.json')
+    this.products = []
   }
 
   async addProduct ({title, description, price, thumbnail, code, stock, id}) {
     const data = await fs.readFile(this.filepath, 'utf-8')
-    const products = JSON.parse(data) 
+    this.products = JSON.parse(data) 
 
-    const existingProducts = products?.find(product => product.code === code)
+    const existingProducts = this.products?.find(product => product.code === code)
     if(existingProducts) {
       console.log(`El producto con el ${code} ya esxiste`)
       return
@@ -21,8 +23,8 @@ class ProductManager {
       return
     }
 
-    const newId = products[products.length - 1]?.id || 1
-    products.push({
+    const newId = this.products[products.length - 1]?.id || 1
+    this.products.push({
       title,
       description,
       price,
@@ -38,25 +40,31 @@ class ProductManager {
   
   async getProducts(){
     const data = await fs.readFile(this.filepath, 'utf-8')
-    const products = JSON.parse(data)
+     this.products = JSON.parse(data)
 
-    return products
+    return this.products
   }
 
   async getProductById(productId) {
     const data = await fs.readFile(this.filepath, 'utf-8')
-    const products = JSON.parse(data)
+    this.products = JSON.parse(data)
 
-    const findProduct = products?.find(product => product.id === productId)
+    const findProduct = this.products?.find(product => product.id === productId)
     
-    return findProduct ? console.log(findProduct) : console.log(`El producto con ID ${productId} no existe`)
+    if (findProduct) {
+      return findProduct;
+    } else {
+      console.log(`El producto con ID ${productId} no existe`);
+      return null;
+    }
+    // return findProduct ? console.log(findProduct) : console.log(`El producto con ID ${productId} no existe`)
   }
 
   async updateProduct(productId, {title, description, price, thumbnail, code, stock}) {
     const data = await fs.readFile(this.filepath, 'utf-8')
-    const products = JSON.parse(data)
+    this.products = JSON.parse(data)
 
-    const updateProduct = products.map(product => {
+    const updateProduct = this.products.map(product => {
       if(product.id === productId) {
         return {
           ...product,
@@ -77,26 +85,14 @@ class ProductManager {
 
   async deleteProduct(productId) {
     const data = await fs.readFile(this.filepath, 'utf-8')
-    const products = JSON.parse(data)
+    this.products = JSON.parse(data)
 
-    const updateProducts = products?.filter(product => product.id !== productId)
+    const updateProducts = this.products?.filter(product => product.id !== productId)
    
    await fs.writeFile(this.filepath, JSON.stringify(updateProducts, null, 2)) 
     console.log(`El producto ID:${productId} fue eliminado`)
   }
 }
+ 
+module.exports = ProductManager
 
-
-const product = new ProductManager()
-async function main() {
-  await product.addProduct({
-    title:"Medias",
-    description:"Par de medias",
-    price:100,
-    code:67,
-    stock:1000,
-    thumbnail:"imagen medias"
-  })
-}
-
-main()
