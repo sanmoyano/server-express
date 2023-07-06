@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/productos', (req,res) => {
-  const {limit} = req.query
+  const { limit } = req.query
   console.log(`Buscando productos con ${limit}`)
   if(limit){
     const filteredProducts = products
