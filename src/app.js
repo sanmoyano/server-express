@@ -30,7 +30,6 @@ app.get('/productos/:id', async (req, res) => {
   const productId = parseInt(id)
   const product = await producManager.getProductById(productId)
 
-
   if (product) {
     res.send(product);
   } else {
