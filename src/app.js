@@ -9,11 +9,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/productos', (req,res) => {
-  const {search} = req.query
-  console.log(`Buscando productos con ${search}`)
-  if(search){
+  const {limit} = req.query
+  console.log(`Buscando productos con ${limit}`)
+  if(limit){
     const filteredProducts = products
-      .filter(p => p.title.includes(search) || p.description.includes(search))
+      .filter(p => p.title.includes(limit) || p.description.includes(limit))
     res.send(filteredProducts)
   } else {
     res.send(products)
