@@ -90,12 +90,12 @@ class ProductManager {
 const product = new ProductManager()
 async function main() {
   await product.addProduct({
-    title:"Zapatillas",
-    description:"Par de zapatillas",
-    price:12000,
-    code:4567,
-    stock:200,
-    thumbnail:"imagen zapatillas"
+    title:"Medias",
+    description:"Par de medias",
+    price:100,
+    code:67,
+    stock:1000,
+    thumbnail:"imagen medias"
   })
 }
 
