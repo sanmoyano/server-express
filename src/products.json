@@ -3,7 +3,12 @@
     "title": "remera",
     "description": "esta es una remera",
     "price": 1500,
-    "thumbnail": "imagen de la remera",
+    "thumbnail": [
+      "superior",
+      "gris",
+      "manga cortas",
+      "verano"
+    ],
     "code": 249,
     "stock": 100,
     "id": 1
@@ -12,7 +17,11 @@
     "title": "camisa",
     "description": "esta es la camisa",
     "price": 2500,
-    "thumbnail": "imagen de la camisa",
+    "thumbnail": [
+      "superior",
+      "gris",
+      "verano"
+    ],
     "code": 1459,
     "stock": 300,
     "id": 2
@@ -21,7 +30,12 @@
     "title": "buzo",
     "description": "esta es un buzo",
     "price": 2500,
-    "thumbnail": "imagen del buzo",
+    "thumbnail": [
+      "superior",
+      "negro",
+      "abrigado",
+      "invierno"
+    ],
     "code": 19,
     "stock": 300,
     "id": 3
@@ -30,7 +44,13 @@
     "title": "pantalon",
     "description": "este es un pantalon",
     "price": 200,
-    "thumbnail": "imagen del pantalon",
+    "thumbnail": [
+      "inferior",
+      "jean",
+      "largo",
+      "invierno",
+      "verano"
+    ],
     "code": 125,
     "stock": 100,
     "id": 4
@@ -39,7 +59,11 @@
     "title": "zapatillas",
     "description": "par de zapatillas",
     "price": 12000,
-    "thumbnail": "imagen zapatillas",
+    "thumbnail": [
+      "inferior",
+      "invierno",
+      "verano"
+    ],
     "code": 4567,
     "stock": 200,
     "id": 5
@@ -48,7 +72,12 @@
     "title": "medias",
     "description": "par de medias",
     "price": 100,
-    "thumbnail": "imagen medias",
+    "thumbnail": [
+      "inferior",
+      "invierno",
+      "verano",
+      "largo"
+    ],
     "code": 67,
     "stock": 1000,
     "id": 6
