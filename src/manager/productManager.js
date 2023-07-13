@@ -5,7 +5,7 @@ class ProductManager {
   #products = []
   constructor(filename) {
     this.filename = filename
-    this.filepath = path.join(__dirname, 'products.json')
+    this.filepath = path.join(__dirname, '../data','products.json')
   }
 
   #readFile = async () => {
