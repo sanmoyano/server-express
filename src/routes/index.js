@@ -5,6 +5,6 @@ const CartRouter = require('./api/cart.router')
 const router = Router()
 
 router.use('/products', ProductRouter)
-// router.use('/cart', CartRouter)
+router.use('/cart', CartRouter)
 
 module.exports = router

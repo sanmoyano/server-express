@@ -5,10 +5,6 @@ const routes = require('./routes')
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.send('HOLA INICIO')
-})
-
 app.use('/api',routes)
 
 const port = 3000

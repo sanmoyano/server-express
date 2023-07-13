@@ -2,33 +2,39 @@
   {
     "title": "remera",
     "description": "esta es una remera",
+    "code": 249,
     "price": 1500,
+    "status": true,
+    "stock": 100,
+    "category": "remeras",
     "thumbnail": [
       "superior",
       "gris",
       "manga cortas",
       "verano"
     ],
-    "code": 249,
-    "stock": 100,
     "id": 1
   },
   {
     "title": "camisa",
     "description": "esta es la camisa",
+    "code": 1459,
+    "stock": 300,
+    "status": true,
     "price": 2500,
     "thumbnail": [
       "superior",
       "gris",
       "verano"
     ],
-    "code": 1459,
-    "stock": 300,
     "id": 2
   },
   {
     "title": "buzo",
     "description": "esta es un buzo",
+    "code": 19,
+    "stock": 300,
+    "status": true,
     "price": 2500,
     "thumbnail": [
       "superior",
@@ -36,13 +42,14 @@
       "abrigado",
       "invierno"
     ],
-    "code": 19,
-    "stock": 300,
     "id": 3
   },
   {
     "title": "pantalon",
     "description": "este es un pantalon",
+    "code": 125,
+    "stock": 100,
+    "status": true,
     "price": 200,
     "thumbnail": [
       "inferior",
@@ -51,35 +58,53 @@
       "invierno",
       "verano"
     ],
-    "code": 125,
-    "stock": 100,
     "id": 4
   },
   {
-    "title": "zapatillas",
-    "description": "par de zapatillas",
-    "price": 12000,
+    "title": "joggin",
+    "description": "joggin invierno",
+    "code": 22,
+    "price": 3200,
+    "status": true,
+    "stock": 20,
+    "category": "pantalones",
     "thumbnail": [
       "inferior",
-      "invierno",
-      "verano"
+      "azul",
+      "algodon",
+      "verano",
+      "invierno"
     ],
-    "code": 4567,
-    "stock": 200,
-    "id": 5
+    "id": 7
   },
   {
-    "title": "medias",
-    "description": "par de medias",
-    "price": 100,
+    "title": "sweater",
+    "description": "sweater invierno",
+    "code": 2,
+    "price": 1200,
+    "status": true,
+    "stock": 100,
+    "category": "abrigos",
     "thumbnail": [
-      "inferior",
-      "invierno",
-      "verano",
-      "largo"
+      "azul",
+      "algodon",
+      "invierno"
     ],
-    "code": 67,
-    "stock": 1000,
-    "id": 6
+    "id": 8
+  },
+  {
+    "title": "termica",
+    "description": "termica invierno",
+    "code": 11,
+    "price": 2000,
+    "status": true,
+    "stock": 100,
+    "category": "deporte",
+    "thumbnail": [
+      "negro",
+      "algodon",
+      "invierno"
+    ],
+    "id": 9
   }
 ]

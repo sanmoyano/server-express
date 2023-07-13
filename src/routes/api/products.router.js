@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const ProductManager = require('../../manager/productManager')
+const ProductManager = require('../../manager/ProductManager')
 
 const producManager = new ProductManager('products.json')
 const router = Router()
@@ -12,16 +12,16 @@ router.get('/', async (req,res) => {
 
   if(limit){
     filteredProducts = filteredProducts
-      .filter(p => p.thumbnail.includes(limit.toLowerCase()) || p.title.includes(limit.toLowerCase()) || p.description.includes(limit.toLowerCase()))
+      .filter(p => p.thumbnail.includes(limit.toLowerCase()) || p.title.includes(limit.toLowerCase()) || p.description.includes(limit.toLowerCase()) || p.category.includes(limit.toLowerCase()))
     res.send(filteredProducts)
   } else {
     res.send(products)
   }
 })
 
-router.get('/:id', async (req, res) => {
-  const { id } = req.params
-  const productId = parseInt(id)
+router.get('/:pId', async (req, res) => {
+  const { pId } = req.params
+  const productId = parseInt(pId)
   const product = await producManager.getProductById(productId)
 
   if(!product){
@@ -38,9 +38,9 @@ router.post('/', async (req, res) => {
   res.status(201).send(product)
 })
 
-router.delete('/:id', async (req, res) => {
-  const { id } = req.params
-  const productId = parseInt(id)
+router.delete('/:pId', async (req, res) => {
+  const { pId } = req.params
+  const productId = parseInt(pId)
 
   if(!await producManager.getProductById(productId)) {
     res.sendStatus(404)
@@ -51,9 +51,9 @@ router.delete('/:id', async (req, res) => {
   res.sendStatus(200)
 })
 
-router.put('/:id', async (req, res) => {
-  const { id } = req.params
-  const productId = parseInt(id)
+router.put('/:pId', async (req, res) => {
+  const { pId } = req.params
+  const productId = parseInt(pId)
   const { body } = req
 
   try {
