@@ -64,6 +64,8 @@ class ProductManager {
       thumbnail
     } = product
 
+    // Object.assign(existing, product)
+
     existing.title = title
     existing.description = description
     existing.code = code 

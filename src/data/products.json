@@ -106,5 +106,19 @@
       "invierno"
     ],
     "id": 9
+  },
+  {
+    "title": "zapatos",
+    "description": "mocacines",
+    "code": 12,
+    "price": 2000,
+    "status": true,
+    "stock": 100,
+    "category": "deporte",
+    "thumbnail": [
+      "imagen",
+      "imagen2"
+    ],
+    "id": 10
   }
 ]
