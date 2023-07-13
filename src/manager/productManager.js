@@ -53,27 +53,19 @@ class ProductManager {
       return 
     }
 
-    const {
-      title,
-      description,
-      code,
-      price,
-      status,
-      stock,
-      category,
-      thumbnail
-    } = product
+    const updatedProduct = {
+      ...existing,
+      ...product
+    }
 
-    // Object.assign(existing, product)
-
-    existing.title = title
-    existing.description = description
-    existing.code = code 
-    existing.price = price
-    existing.status = status
-    existing.stock = stock
-    existing.category = category
-    existing.thumbnail = thumbnail
+    existing.title = updatedProduct.title
+    existing.description = updatedProduct.description
+    existing.code = updatedProduct.code 
+    existing.price = updatedProduct.price
+    existing.status = updatedProduct.status
+    existing.stock = updatedProduct.stock
+    existing.category = updatedProduct.category
+    existing.thumbnail = updatedProduct.thumbnail
 
     await this.#writeFile()
   }
