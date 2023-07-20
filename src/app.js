@@ -13,6 +13,15 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use('/static', express.static(path.join(__dirname + '/public')))
 
+app.use((req, res ,next) => {
+  req.user = {
+    name: 'Santiago',
+    role:'admin'
+  }
+
+  next()
+})
+
 app.use('/', Routes.home)
 app.use('/api',Routes.api)
 

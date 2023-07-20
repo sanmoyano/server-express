@@ -10,7 +10,11 @@ router.get('/', async (req, res) => {
 
   res.render('home',{
     title:'Home - Products',
-    products
+    products,
+    user: {
+      ...req.user,
+      isAdmin: req.user.role == 'admin',
+    }
   })
 })
 

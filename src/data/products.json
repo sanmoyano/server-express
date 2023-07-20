@@ -120,5 +120,11 @@
       "imagen2"
     ],
     "id": 10
+  },
+  {
+    "title": "Buzo adidas",
+    "price": "2500",
+    "description": "Buzo invierno adidas original",
+    "id": 11
   }
 ]
