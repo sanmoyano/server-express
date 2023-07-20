@@ -36,7 +36,7 @@ router.post('/:cId/product/:pId', async (req, res) => {
     return
   }
 
-  res.sendStatus(201)
+  res.sendStatus(201).send(productId)
 })
 
 module.exports = router
