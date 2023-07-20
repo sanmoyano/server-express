@@ -9,9 +9,13 @@ router.get('/', async (req, res) => {
   const products  = await productManager.getProducts()
 
   res.render('home',{
-    nombre:'Santiago',
+    title:'Home - Products',
     products
   })
+})
+
+router.get('/realtimeproducts', async(req, res) => {
+   
 })
 
 router.get('/cart', (req, res) => {
