@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 })
 
 router.get('/product/add', async (req, res) => {
-  res.render('admin/addProduct', {
+  res.render('admin/addProducts', {
     title:"Add new product"
   })
 })

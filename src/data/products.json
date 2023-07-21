@@ -126,5 +126,11 @@
     "price": "2500",
     "description": "Buzo invierno adidas original",
     "id": 11
+  },
+  {
+    "title": "Computadora Asus",
+    "price": "4000",
+    "description": "Esta es una computadora asus modelo.... ",
+    "id": 12
   }
 ]

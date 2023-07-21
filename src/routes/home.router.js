@@ -18,9 +18,6 @@ router.get('/', async (req, res) => {
   })
 })
 
-router.get('/realtimeproducts', async(req, res) => {
-   
-})
 
 router.get('/cart', (req, res) => {
   res.render('cart',{
