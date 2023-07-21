@@ -21,8 +21,8 @@ function refreshPromo() {
   socket.emit('msg', 'mensaje de broadcast')
 }
 
-function addToCart(productId) {
-  socket.emit('addToCart', { userId: 1, productId })
+function newProdcut(product) {
+  socket.emit('newProduct', product)
 }
 
 socket.on('productsInCart', (products) => {
