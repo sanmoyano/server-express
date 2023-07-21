@@ -1,8 +1,5 @@
 const socket = io()
 
-socket.emit('event', 'Hola desde el socket')
-socket.on('event', (res) => console.log(res))
-
 const bannerEl = document.querySelector('#rebaja-banner')
 const cartBadgeEl = document.querySelector('#cart-badge')
 
