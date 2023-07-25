@@ -27,5 +27,6 @@ socket.on('msg', (msg) => {
 })
 
 socket.on('newProduct', (product) => {
+  location.reload()
   addProductToDOM(product)  
 })

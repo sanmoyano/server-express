@@ -128,9 +128,19 @@
     "id": 11
   },
   {
-    "title": "Computadora Asus",
-    "price": "4000",
-    "description": "Esta es una computadora asus modelo.... ",
+    "title": "TV LG",
+    "description": "televisor lg",
+    "code": 123125,
+    "price": 100000,
+    "status": true,
+    "stock": 100,
+    "category": "electronica",
+    "thumbnail": [
+      "imagen",
+      "imagen2",
+      "imagen3",
+      "imagen4"
+    ],
     "id": 12
   }
 ]
