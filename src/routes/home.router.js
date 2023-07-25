@@ -18,6 +18,20 @@ router.get('/', async (req, res) => {
   })
 })
 
+router.get('/realtimeproducts', async (req, res) => {
+  const products  = await productManager.getProducts()
+
+  res.render('realTimeProducts',{
+    title:'Real Time',
+    products,
+    user: {
+      ...req.user,
+      isAdmin: req.user.role == 'admin',
+    },
+  })
+})
+
+
 
 router.get('/cart', (req, res) => {
   res.render('cart',{

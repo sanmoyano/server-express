@@ -33,8 +33,11 @@ router.get('/:pId', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const { body } = req
+  const { body, io } = req
   const product = await producManager.createProduct(body)
+
+  io.emit('newProduct', product)
+
   res.status(201).send(product)
 })
 

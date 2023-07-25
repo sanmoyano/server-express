@@ -28,7 +28,11 @@ app.use((req, res ,next) => {
 })
 
 app.use('/', Routes.home)
-app.use('/api',Routes.api)
+app.use('/api', (req, res, next) => {
+  req.io = io
+
+  next()
+},Routes.api)
 
 io.on('connection', socketManager)
 
